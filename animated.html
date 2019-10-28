@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+<button id="tikla">Bana Tıkla</button>
+<img id="resim" src="https://www.mobil13.com/wp-content/uploads/2018/05/google-resimler.png" alt="">
+<script>
+    $('#tikla').click(function () {
+        $('#resim').animate({
+            opacity : 0.35,
+            height:50+'px'
+
+        },"slow",function () { //efek tamamlandıktan sonra olacak işlemler "fast" yazan yere "slow" sayı gelebiliyor(ornek:5000) milisaniye şeklinde default 400ms
+            $('#resim').animate({
+                opacity:1,
+height:80+'vh'// vh % css ölçü birimlerini kullanabiliriz
+            },1000);
+            $('#resim').after('<p>Animasyon tamamlandı</p>'); //afterdan bir örnek
+        })
+    })
+</script>
+</body>
+</html>
